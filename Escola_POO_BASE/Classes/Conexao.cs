@@ -12,6 +12,7 @@ namespace Escola_POO_BASE.Classes
     {
         //CONEXÃO REMOTA
 
+
         #region Variáveis
 
         //String de Conexão                                     Informações CHUMBADAS - HardCode
