@@ -91,7 +91,12 @@ namespace Escola_POO_BASE.Classes
                 case 0:
                     //Busca por Nome
 
-                    return alunos.Where(a => a.Nome.ToUpper().Contains(texto.ToUpper())).ToList();
+                    return alunos.Where(a => a.Nome
+                                              .ToUpper()
+                                              .Normalize(NormalizationForm.FormD)
+                                              .Contains(texto
+                                                        .ToUpper()
+                                                        .Normalize(NormalizationForm.FormD))).ToList();
 
                     //break; quando não for return, é obrigatório o uso do break.
                 case 1:
