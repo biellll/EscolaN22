@@ -43,8 +43,16 @@
             this.TsiCadastros = new System.Windows.Forms.ToolStripMenuItem();
             this.TsiCadastraAluno = new System.Windows.Forms.ToolStripMenuItem();
             this.TmrRelogio = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.LblAlunosRemovidos = new System.Windows.Forms.Label();
+            this.LblAlunosAtivos = new System.Windows.Forms.Label();
+            this.LblQtdAlunos = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SspRodape.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // SspRodape
@@ -109,7 +117,7 @@
             // TslDataHora
             // 
             this.TslDataHora.Name = "TslDataHora";
-            this.TslDataHora.Size = new System.Drawing.Size(561, 30);
+            this.TslDataHora.Size = new System.Drawing.Size(299, 30);
             this.TslDataHora.Spring = true;
             this.TslDataHora.Text = "10/10/2010 10:10";
             this.TslDataHora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -160,11 +168,78 @@
             // 
             this.TmrRelogio.Tick += new System.EventHandler(this.TmrRelogio_Tick);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.LblAlunosRemovidos);
+            this.panel1.Controls.Add(this.LblAlunosAtivos);
+            this.panel1.Controls.Add(this.LblQtdAlunos);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 38);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(252, 524);
+            this.panel1.TabIndex = 4;
+            // 
+            // LblAlunosRemovidos
+            // 
+            this.LblAlunosRemovidos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.LblAlunosRemovidos.Location = new System.Drawing.Point(69, 308);
+            this.LblAlunosRemovidos.Name = "LblAlunosRemovidos";
+            this.LblAlunosRemovidos.Size = new System.Drawing.Size(78, 41);
+            this.LblAlunosRemovidos.TabIndex = 5;
+            // 
+            // LblAlunosAtivos
+            // 
+            this.LblAlunosAtivos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.LblAlunosAtivos.Location = new System.Drawing.Point(69, 177);
+            this.LblAlunosAtivos.Name = "LblAlunosAtivos";
+            this.LblAlunosAtivos.Size = new System.Drawing.Size(78, 40);
+            this.LblAlunosAtivos.TabIndex = 4;
+            // 
+            // LblQtdAlunos
+            // 
+            this.LblQtdAlunos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.LblQtdAlunos.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblQtdAlunos.Location = new System.Drawing.Point(69, 61);
+            this.LblQtdAlunos.Name = "LblQtdAlunos";
+            this.LblQtdAlunos.Size = new System.Drawing.Size(78, 37);
+            this.LblQtdAlunos.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 249);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(197, 25);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Alunos Removidos:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(25, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(147, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Alunos ativos:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(229, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Quantidade de alunos:";
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 597);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.SspRodape);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,6 +254,8 @@
             this.SspRodape.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +276,12 @@
         private System.Windows.Forms.ToolStripMenuItem TsiCadastros;
         private System.Windows.Forms.ToolStripMenuItem TsiCadastraAluno;
         private System.Windows.Forms.Timer TmrRelogio;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblQtdAlunos;
+        private System.Windows.Forms.Label LblAlunosRemovidos;
+        private System.Windows.Forms.Label LblAlunosAtivos;
     }
 }

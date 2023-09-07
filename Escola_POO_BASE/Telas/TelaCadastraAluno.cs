@@ -257,5 +257,7 @@ namespace Escola_POO_BASE.Telas
         {
             TxtBuscar.Focus();
         }
+
+        
     }
 }

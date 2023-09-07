@@ -22,16 +22,31 @@ namespace Escola_POO_BASE.Telas
         //Declaração do obj
         private Usuario _userLogado;
         private List<Usuario> _usuarios;
+        private List<Aluno> _alunos;
         public TelaPrincipal(Usuario usuarioLogado)
         {
             //Inicializa os componentes da tela
             InitializeComponent();
             //usuarioLogado sendo atribuído em _userLogado.
             _userLogado = usuarioLogado;
+            try
+            {
+                _alunos = Usuario.BuscarUsuarios().ConvertAll(a => (Aluno)a);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,
+                                "Erro",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
         }
 
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
+            LblAlunosAtivos.Text = _alunos.Count.ToString();
+            
             /*TODO 1- Identificar quem está logado, se é o aluno ou professor.
              * Se for o aluno, mostrar o perfil "Aluno" no ToolStrip. 
              * O mesmo deve acontecer caso seja o professor.
@@ -51,19 +66,17 @@ namespace Escola_POO_BASE.Telas
                 TsiCadastros.Visible = true;
                 TslPerfilUserLogado.Text = "Professor";
             }
-
-
-            
-            TslNomeUserLogado.Text = _userLogado.Nome;
-            TslEmailUserLogado.Text = _userLogado.Email;
-
-
+                                 
             //TODO 2- Descobrir como mostrar a data e hora completa no ToolStrip.            
 
             TslDataHora.Text = DateTime.Now.ToLongDateString() + " | " + DateTime.Now.ToLongTimeString();
             TmrRelogio.Interval = 1000;
             TmrRelogio.Enabled = true;
 
+            LblQtdAlunos.Text = _alunos.Count.ToString();
+            LblAlunosRemovidos.Text = _alunos.Where(a => a.Ativo == false).Count().ToString();
+            LblAlunosAtivos.Text = _alunos.Where(a => a.Ativo == true).Count().ToString();          
+            
         }
 
         private void TsiAlterarSenha_Click(object sender, EventArgs e)
@@ -84,6 +97,6 @@ namespace Escola_POO_BASE.Telas
         private void TmrRelogio_Tick(object sender, EventArgs e)
         {
             TslDataHora.Text = DateTime.Now.ToLongDateString() + " | " + DateTime.Now.ToLongTimeString();
-        }
+        }             
     }
 }
